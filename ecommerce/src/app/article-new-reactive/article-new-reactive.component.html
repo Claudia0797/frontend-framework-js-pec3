@@ -1,0 +1,103 @@
+<div class="container">
+
+    <h2>
+        Nuevo artículo reactivo
+    </h2>
+
+    <form [formGroup]="articleForm" (ngSubmit)="onSubmit()">
+
+        <!-- NOMBRE -->
+        <div>
+
+            <label>
+                Nombre
+            </label>
+
+            <input type="text" formControlName="name">
+
+            <div class="text-danger" *ngIf="
+          (f['name'].invalid && f['name'].touched)
+          ||
+          (submitted && f['name'].invalid)
+        ">
+
+                <div *ngIf="f['name'].errors?.['required']">
+                    El nombre es obligatorio
+                </div>
+
+                <div *ngIf="f['name'].errors?.['forbiddenName']">
+                    Ese nombre no está permitido
+                </div>
+
+            </div>
+        </div>
+
+        <!-- PRECIO -->
+        <div>
+
+            <label>
+                Precio
+            </label>
+
+            <input type="number" formControlName="price">
+
+            <div class="text-danger" *ngIf="
+          (f['price'].invalid && f['price'].touched)
+          ||
+          (submitted && f['price'].invalid)
+        ">
+
+                <div *ngIf="f['price'].errors?.['required']">
+                    El precio es obligatorio
+                </div>
+
+                <div *ngIf="f['price'].errors?.['min']">
+                    El precio mínimo es 0.1€
+                </div>
+
+            </div>
+        </div>
+
+        <!-- URL -->
+        <div>
+
+            <label>
+                URL imagen
+            </label>
+
+            <input type="text" formControlName="imageUrl">
+
+            <div class="text-danger" *ngIf="
+          (f['imageUrl'].invalid && f['imageUrl'].touched)
+          ||
+          (submitted && f['imageUrl'].invalid)
+        ">
+
+                <div *ngIf="f['imageUrl'].errors?.['required']">
+                    La URL es obligatoria
+                </div>
+
+                <div *ngIf="f['imageUrl'].errors?.['pattern']">
+                    URL incorrecta
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CHECKBOX -->
+        <div class="checkbox-container">
+
+            <input type="checkbox" formControlName="isOnSale">
+
+            <label>
+                En venta
+            </label>
+
+        </div>
+
+        <button type="submit">
+            Crear artículo
+        </button>
+
+    </form>
+</div>

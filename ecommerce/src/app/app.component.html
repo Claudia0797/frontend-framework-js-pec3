@@ -1,2 +1,15 @@
-<h1>Mi Ecommerce</h1>
-<app-article-item [article]="articuloDePrueba"></app-article-item>
+<!-- <h1>Mi Ecommerce</h1>
+<app-article-item [article]="articuloDePrueba"></app-article-item> -->
+
+<app-navbar (cambioVista)="cambiarVista($event)"></app-navbar>
+
+<!-- LISTA -->
+<app-article-list *ngIf="vista === 'list'"></app-article-list>
+
+<!-- FORMULARIO TEMPLATE DRIVEN -->
+<app-article-new-template *ngIf="vista === 'template'">
+</app-article-new-template>
+
+<!-- FORMULARIO REACTIVE FORM -->
+<app-article-new-reactive *ngIf="vista === 'reactive'">
+</app-article-new-reactive>

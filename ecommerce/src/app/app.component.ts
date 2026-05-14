@@ -7,14 +7,20 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ecommerce';
+  // title = 'ecommerce';
 
-  public articuloDePrueba = {
-    name: 'iPhone 16',
-    imageUrl: 'https://picsum.photos/200/300', // Imagen aleatoria
-    price: 25.50,
-    isOnSale: true,
-    quantityInCart: 0
-  };
+  // public articuloDePrueba = {
+  //   name: 'iPhone 16',
+  //   imageUrl: 'https://picsum.photos/200/300', // Imagen aleatoria
+  //   price: 25.50,
+  //   isOnSale: true,
+  //   quantityInCart: 0
+  // };
+
+  vista: 'list' | 'template' | 'reactive' = 'list';
+
+  cambiarVista(vista: string) {
+    this.vista = vista as any;
+  }
 
 }

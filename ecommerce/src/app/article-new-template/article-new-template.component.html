@@ -1,1 +1,52 @@
-<p>article-new-template works!</p>
+<div class="container mt-4">
+    <h2>Nuevo artículo (Template Driven)</h2>
+
+    <form #articleForm="ngForm" (ngSubmit)="onSubmit(articleForm)">
+        <!-- NOMBRE -->
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+
+            <input type="text" class="form-control" name="name" [(ngModel)]="article.name" required #name="ngModel" />
+
+            <div class="text-danger" *ngIf="(name.invalid && name.touched) || (formularioEnviado && name.invalid)">
+                El nombre es obligatorio
+            </div>
+        </div>
+
+        <!-- PRECIO -->
+        <div class="mb-3">
+            <label class="form-label">Precio</label>
+
+            <input type="number" class="form-control" name="price" [(ngModel)]="article.price" required min="0.1"
+                #price="ngModel" />
+
+            <div class="text-danger" *ngIf="(price.invalid && price.touched) || (formularioEnviado && price.invalid)">
+                <div *ngIf="price.errors?.['required']">El precio es obligatorio.</div>
+            </div>
+        </div>
+
+        <!-- URL IMAGEN -->
+        <div class="mb-3">
+            <label class="form-label">URL imagen</label>
+
+            <input type="text" class="form-control" name="imageUrl" [(ngModel)]="article.imageUrl" required
+                [pattern]="imagePattern" #imageUrl="ngModel" />
+
+            <div class="text-danger"
+                *ngIf="(imageUrl.invalid && imageUrl.touched) || (formularioEnviado && imageUrl.invalid)">
+                <div *ngIf="imageUrl.errors?.['required']">La URL es obligatoria.</div>
+
+                <div *ngIf="imageUrl.errors?.['pattern']">La URL no es válida.</div>
+            </div>
+        </div>
+
+        <!-- CHECKBOX -->
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" name="isOnSale" [(ngModel)]="article.isOnSale" />
+
+            <label class="form-check-label"> En venta </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Crear artículo</button>
+    </form>
+</div>

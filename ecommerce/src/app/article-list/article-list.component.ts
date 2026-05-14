@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
-import { ArticleItemComponent } from '../article-item/article-item';
+import { ArticleItemComponent } from '../article-item/article-item.component';
 import { Article } from '../models/article.model';
 import { ArticleQuantityChange } from '../models/article-quantity-change.model';
 
 @Component({
   selector: 'app-article-list',
   standalone: false,
-  imports: [ArticleItemComponent],
   template: `
     <div class="list">
       <app-article-item
