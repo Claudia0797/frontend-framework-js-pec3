@@ -1,27 +1,14 @@
-# Ecommerce
+# Desarrollo front-end con frameworks JavaScript
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+# PEC23: Frameworks: Introducción a Angular y formularios
 
-## Development server
+**Login UOC:**
+cvicario0
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Nombre y apellidos del alumno:**
+Claudia Vicario García
 
-## Code scaffolding
+**Breve descripción de lo realizado en esta PEC**
+Esta PEC ha consistido en la toma de contacto con el framework de Angular, apoyándonos en su herramienta CLI (Angular). Asimismo se ha aplicado la creación de formularios en Angular, empleando las dos técnicas que el framework ofrece: formularios dirigidos por template y formularios reactivos.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+En cuanto a las dificultades se han encontrado diversas dificultades y errores con un conflicto de compatibilidad de versiones entre Node.js y Angular. Además, también he tenido la sensación de que la curva de aprendizaje de Angular es bastante pronunciada, resultando un framework complejo y difícil de entender y de estructurar. Por lo que esta PEC ha supuesto un gran reto.
