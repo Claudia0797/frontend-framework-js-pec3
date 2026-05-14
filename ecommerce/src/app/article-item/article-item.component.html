@@ -1,0 +1,11 @@
+<div class="card" [ngClass]="{'en-venta': article.isOnSale}">
+    <img [src]="article.imageUrl" alt="article.name" width="150">
+    <h1>{{ article.name }}</h1>
+    <p [ngClass]="{'clase-gris': !article.isOnSale}">Precio: {{ article.price }}</p>
+
+    <div *ngIf="article.isOnSale">
+        <button (click)="decrementar()" [disabled]="article.quantityInCart === 0">-</button>
+        <span>{{ article.quantityInCart }}</span>
+        <button (click)="incrementar()">+</button>
+    </div>
+</div>
